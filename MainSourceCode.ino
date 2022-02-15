@@ -5,7 +5,7 @@ int relayPause = 4 ; // Activates relay #2 and disconnects ground to motor modul
 void setup() {
   pinMode(rfSwitchInput, INPUT);
   pinMode(relayExtend, OUTPUT);
-  pinMode(relayPause = OUTPUT);
+  pinMode(relayPause, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -21,8 +21,8 @@ void loop() {
       digitalWrite(relayExtend, HIGH);
       Serial.println(digitalRead(rfSwitchInput));
       delay(10000); // Extend for X seconds (1000 = 1 sec)
-      digitalWrite(relayPause = HIGH); // Breaks ground on relay #2 to pause retraction
+      digitalWrite(relayPause, HIGH); // Breaks ground on relay #2 to pause retraction
       digitalWrite(relayExtend, LOW); // Reverts module to default retraction mode
-      delay(10000; // // Pause for X seconds (1000 = 1 sec)
+      delay(10000); // // Pause for X seconds (1000 = 1 sec)
       }
 }
